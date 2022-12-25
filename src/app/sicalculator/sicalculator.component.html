@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="offset-sm-4 col-sm-4">
+        <div class="card text-blank">
+            <div class="card-body">
+                <div class="card-title text-center">
+                    <h5>Calculate Simple Interest</h5>
+                </div>
+                <div class="card-text">
+                    <form [formGroup]="siForm" (ngSubmit)="onSubmit(siForm)">
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Principal" name="principal" [formControl]="siForm.controls['principal']">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Rate of Interest" name="rate" [formControl]="siForm.controls['rate']">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Number of months" name="time" [formControl]="siForm.controls['time']">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-warning btn-block round">Calculate SI</button>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="number" class="form-control" placeholder="SI" name="si" [formControl]="siForm.controls['si']">
+                        </div>
+                        <div class="alert alert-primary">
+                            Amount in INR: {{ amount|currency:'INR'}}
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
